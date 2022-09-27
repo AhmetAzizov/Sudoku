@@ -1,0 +1,326 @@
+body,
+html {
+  background-color: antiquewhite;
+  width: 100%;
+  overflow-x: hidden;
+  user-select: none;
+  /* filter: blur(2px);
+  pointer-events: none;
+  -webkit-filter: blur(2px); */
+}
+
+/* display: flex; 
+justify-content: center; 
+align-items: center; */
+
+#pauseScreen{
+  background-color: red;
+  position: relative;
+  text-align: center;
+  width: 700px;
+  height: 350px;
+  left: calc(50% - 350px);
+  /* margin-left: -150px; */
+  /* top: calc(50% - 300px); */
+  top: 230px;
+  /* margin-top: -100px; */
+  border-radius: 50px;
+  visibility: hidden;
+  z-index: 1;
+}
+
+
+#pauseScreenText{
+  font-size: 45px;
+  font-weight: bold;
+  font-family: cursive;
+  padding-top: 20px;
+}
+
+#pauseScreenTimeLeft{
+  font-size: 80px;
+  color: white;
+  border: 5px dashed cyan;
+  margin-left: 180px;
+  margin-right: 180px;
+  margin-top: -10px;
+  border-radius: 50px;
+}
+
+#pauseScreenResumeButton{
+  position: absolute;
+  background-color: rgb(0, 162, 255);
+  width: 200px;
+  height: 60px;
+  border-radius: 15px;
+  left: calc(50% - 100px);
+  bottom: 40px;
+  font-size: 50px;
+}
+
+#pauseScreenResumeButton:hover{
+  background-color: rgb(0, 72, 255);
+}
+
+#endScreen{
+  position: absolute;
+  background-color: brown;
+  text-align: center;
+  width: 800px;
+  height: 400px;
+  left: calc(50% - 400px);
+  top: calc(50% - 300px);
+  border-radius: 50px;
+  visibility: hidden;
+  z-index: 1;
+}
+
+#endScreen #endScreenText{
+  FONT-WEIGHT: bold;
+  FONT-SIZE: 35px;
+}
+
+#endScreen .endScreenButton{
+  position: absolute;
+  background-color: rgb(228 255 0);
+  width: 200px;
+  height: 60px;
+  border-radius: 50px;
+}
+
+#endScreen #endScreenHomeButton{
+  left: 100px;
+  bottom: 60px;
+  font-size: 40px;
+}
+
+#endScreen #endScreenReturnButton{
+  right: 100px;
+  bottom: 60px;
+  font-size: 50px;
+  color: blue;
+}
+
+#endScreen #endScreenFinishTime{
+  font-size: 60px;
+  border: 4px dashed blue;
+  margin-left: 270px;
+  margin-right: 270px;
+  border-radius: 60px;
+  font-weight: bold;
+  color: gold;
+}
+
+#sudokuContainer {
+  position: relative;
+  /* left: 50%; */
+  /* margin-left: -350px; */
+  top: -385px;
+  margin: auto;
+  margin-top: 10px;
+  display: flow-root;
+}
+
+#selectDifficulty {
+  position: relative;
+  font-size: 30px;
+  color: red;
+  width: 260px;
+  margin: auto;
+  display: block;
+  margin-top: 50px;
+  border-radius: 10px;
+}
+
+#selectFormat {
+  position: relative;
+  font-size: 30px;
+  color: red;
+  width: 260px;
+  margin: auto;
+  display: block;
+  margin-top: 50px;
+  border-radius: 10px;
+}
+
+.input {
+  background-color: white;
+  box-sizing: border-box;
+  width: 100px;
+  height: 100px;
+  font-size: 85px;
+  border: 1px solid black;
+  border-radius: 10px;
+  text-align: center;
+  margin: 0;
+  float: left;
+}
+
+#startButton {
+  position: relative;
+  width: 200px;
+  height: 50px;
+  font-size: 35px;
+  margin: auto;
+  margin-top: 40px;
+  display: block;
+}
+
+/* -------------------------------------- buttonPopup -------------------------------------- */
+
+#buttonPopup {
+  position: absolute;
+  background-color: red;
+  background: linear-gradient(to top, red, green);
+  top: 50px;
+  left: 60px;
+  height: auto;
+  width: 120px;
+  border-radius: 15px;
+  /* transition: 500ms; */
+  overflow: hidden;
+  visibility: hidden;
+}
+
+#buttonPopup .button {
+  text-align: center;
+  background-color: rgb(133, 208, 235);
+  display: inline-block;
+  width: calc(33.33% - 10px);
+  height: 25px;
+  border-radius: 8px;
+  border: 0;
+  margin: 5px;
+  font-size: 15px;
+  font-weight: bold;
+  padding-top: 5px;
+
+  /* box-sizing: border-box; */
+}
+
+#buttonPopup #clearButton {
+  width: calc(50% - 10px);
+}
+
+#buttonPopup #tipButton {
+  position: absolute;
+  width: calc(50% - 10px);
+  font-size: 13px;
+}
+
+#buttonPopup #tipButton #solveIcon{
+  position: absolute;
+  left: 80px;
+  bottom: -1px
+}
+
+/* ---------------------------------- popup button hover ------------------------------------------ */
+
+#buttonPopup:hover > .button{
+  height: 75px;
+  margin: 10px;
+  width: calc(33.33% - 20px);
+  border-radius: 20px;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+#buttonPopup:hover > #clearButton {
+  width: calc(50% - 20px);
+}
+
+#buttonPopup:hover > #tipButton {
+  width: calc(50% - 20px);
+  font-weight: bold;
+  font-size: 39px;
+}
+
+#buttonPopup:hover{
+  width: 300px;
+  border-radius: 35px;
+}
+
+/* ------------------------------------------------------------------------------------------------- */
+
+#sideGroupBox .sideButton{
+  position: absolute;
+  height: 80px;
+  width: 200px;
+  border-radius: 15px;
+  text-align: center;
+  left: calc(50% - 100px);
+}
+
+#sideGroupBox #menuButton{
+  background-color: rgb(231, 146, 136);
+  top: 50px;
+  border: 2px solid red;
+  font-size: 55px;
+}
+
+#sideGroupBox #solveButton{
+  background-color: rgb(231, 146, 136);
+  top: 150px;
+  border: 2px solid red;
+  font-size: 32px;
+}
+
+#sideGroupBox #timer{
+  background-color: rgb(231, 146, 136);
+  top: 250px;
+  border: 2px solid red;
+  font-size: 65px;
+  font-weight: bold;
+}
+
+#sideGroupBox #pauseButton{
+  background-color: rgb(0 161 255);
+  top: 350px;
+  font-size: 55px;
+}
+
+
+
+#sideGroupBox{
+  position: fixed;
+  /* border: 4px dashed green; */
+  width: 250px;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background-color: blue;
+}
+
+
+
+
+.subCell {
+  position: absolute;
+  height: 33.33%;
+  /* z-index: -1; */
+}
+
+.input1 {
+  background-color: rgb(205, 203, 203);
+}
+
+.cellHover {
+  border-width: 5px !important;
+  border-style: dashed;
+  /* background-color: rgb(197, 196, 196); */
+}
+
+.cellActive {
+  background-color: rgb(95, 160, 160);
+}
+
+.cellError {
+  color: red !important;
+  font-weight: bold;
+}
+
+.cellInitial {
+  border-width: 3px;
+  border-color: black;
+  color: darkblue;
+}

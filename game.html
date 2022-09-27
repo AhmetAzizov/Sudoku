@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sudoku</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- <div id="mainBody">
+    <button id="startButton" onclick="startButton()"><b>Start</b></button>
+
+    <select id="selectDifficulty">
+      <option selected disabled hidden>------Difficulty------</option>
+      <option value="3">Easy</option>
+      <option value="4">Medium</option>
+      <option value="5">Hard</option>
+    </select>
+
+    <select id="selectFormat">
+        <option selected disabled hidden>------Format------</option>
+        <option value="2,3">6 x 6</option> 
+        <option value="3,3">9 x 9</option>
+    </select>
+    </div> -->
+
+    <div id="mainBody"></div>
+
+    <div id="pauseScreen">
+      <p id="pauseScreenText">The game is paused </p>
+      <p id="pauseScreenTimeLeft">00:00</p>
+      <div id="pauseScreenResumeButton">&#9654;</div>
+    </div>
+
+    <div id="endScreen">
+      <p id="endScreenText">Congratulations! You have finished the game.<br>Your finish time:</p>
+      <div class="endScreenButton" id="endScreenHomeButton">&#127968;</div>
+      <div class="endScreenButton" id="endScreenReturnButton">&#9166;</div>
+      <div id="endScreenFinishTime">00:00</div>
+    </div>
+
+    <div id="sudokuContainer"></div>
+    <script src="script.js"></script>
+  </body>
+</html>
