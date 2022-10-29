@@ -166,11 +166,17 @@ function startButton() {
       clearInterval(timer);
     }
 
+    document.getElementById("tipButton").onclick = () => {
+      console.log(matrixClone[getIndex(num1, num2)]);
+      document.getElementById(`a${getIndex(num1, num2)}`).innerText = matrixClone[getIndex(num1, num2)];
+    }
+
+
     document.getElementById("pauseButton").onclick = () => {
       // document.getElementById("sudokuContainer").style.visibility = "hidden";
       document.getElementById("pauseScreen").style.visibility = "visible";
 
-      document.getElementById("sudokuContainer").style.pointerEvents = "none";
+      document.getElementById("startingPage").style.pointerEvents = "none";
 
       document.getElementById("pauseScreenTimeLeft").innerHTML = minutesDisplay + ":" + secondsDisplay;
 
@@ -181,7 +187,7 @@ function startButton() {
       // document.getElementById("sudokuContainer").style.visibility = "visible";
       document.getElementById("pauseScreen").style.visibility = "hidden";
 
-      document.getElementById("sudokuContainer").style.pointerEvents = "all";
+      document.getElementById("startingPage").style.pointerEvents = "all";
 
       isPaused = false;
     }
@@ -247,6 +253,7 @@ function startButton() {
     }
 
     //document.getElementById("buttonPopup").addEventListener("transitionend", () => (document.getElementById("buttonPopup").style.transition = "10ms"))
+    
 
 
     function toggleRight(){
