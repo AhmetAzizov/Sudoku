@@ -180,7 +180,21 @@ align-items: center; */
   /* transition: 500ms; */
   overflow: hidden;
   visibility: hidden;
+  
 }
+
+#buttonPopupTriangle {
+  position: absolute;
+  width: 0;
+	height: 0;
+	border-left: 25px solid transparent;
+	border-right: 25px solid transparent;
+	border-bottom: 50px solid #555;
+  color: red;
+
+  top: 0;
+}
+
 
 #buttonPopup .button {
   text-align: center;
@@ -194,6 +208,7 @@ align-items: center; */
   font-size: 15px;
   font-weight: bold;
   padding-top: 5px;
+  overflow: hidden;
 
   /* box-sizing: border-box; */
 }
@@ -205,7 +220,12 @@ align-items: center; */
 #buttonPopup #tipButton {
   position: absolute;
   width: calc(50% - 10px);
-  font-size: 13px;
+  font-size: 16px;
+  background-color: rgb(129, 129, 6);
+}
+
+#buttonPopup #tipButton:hover{
+  background-color: yellow;
 }
 
 #buttonPopup #tipButton #solveIcon{
@@ -232,7 +252,7 @@ align-items: center; */
 #buttonPopup:hover > #tipButton {
   width: calc(50% - 20px);
   font-weight: bold;
-  font-size: 39px;
+  font-size: 45px;
 }
 
 #buttonPopup:hover{
@@ -265,9 +285,16 @@ align-items: center; */
   font-size: 32px;
 }
 
-#sideGroupBox #timer{
+#sideGroupBox #tipButton{
   background-color: rgb(231, 146, 136);
   top: 250px;
+  border: 2px solid red;
+  font-size: 55px;
+}
+
+#sideGroupBox #timer{
+  background-color: rgb(231, 146, 136);
+  top: 350px;
   border: 2px solid red;
   font-size: 65px;
   font-weight: bold;
@@ -275,7 +302,7 @@ align-items: center; */
 
 #sideGroupBox #pauseButton{
   background-color: rgb(0 161 255);
-  top: 350px;
+  top: 450px;
   font-size: 55px;
 }
 

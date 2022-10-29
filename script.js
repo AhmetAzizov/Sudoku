@@ -62,14 +62,17 @@ function startButton() {
     }
 
     // variable html2 contains the HTML code of the base game in "sudokuContainer" just like mainbody.
-    var html2 = '<div id="buttonPopup">';
+    var html2 = '<div id="sudokuContainer">';
+    html2 += '<div id="buttonPopup">';
+
+    //html2 += '<div id="buttonPopupTriangle"></div>';
 
     for (var a = 1; a < format + 1; a++) {
       html2 += `<div id="button${a}" class="button">${a}</div>`;
     }
 
     html2 += '<div id="clearButton" class="button">clear</div>';
-    html2 += '<div id="tipButton" class="button">Hint&#128161;</div>';
+    html2 += '<div id="tipButton" class="button">&#128161;</div>';
     html2 += "</div>";
 
     for (var a = 1; a < format + 1; a++) {
@@ -78,14 +81,17 @@ function startButton() {
         html2 += `<div class="input input${inputOdd}" id="a${getIndex(a, b)}"></div>`;
       }
     }
+    html2 += '</div>'
 
     html2 += '<div id="sideGroupBox">';
     html2 += '<div id="menuButton" class="sideButton">&#127968;</div>';
     html2 += '<div id="solveButton" class="sideButton">Solve the Game</div>';
-    html2 += '<div id="pauseButton" class="sideButton">&#9208;</div>';
-    html2 += '<div id="timer" class="sideButton">00:00</div></div></div>';
+    html2 += '<div id="tipButton" class="sideButton">&#128161; 0</div>';
+    html2 += '<div id="timer" class="sideButton">00:00</div>';
+    html2 += '<div id="pauseButton" class="sideButton">&#9208;</div></div>';
     
-    document.getElementById("sudokuContainer").innerHTML = html2; // we insert the content of html2 to sudokuContainer.
+    
+    document.getElementById("startingPage").innerHTML = html2; // we insert the content of html2 to sudokuContainer.
     
     // here, we set the width of the container according to the format of the game. We do this to ensure the boxes inside the container are fitted correctly.
     document.getElementById("sudokuContainer").style.width = `${format * 100}px`; 
@@ -121,15 +127,28 @@ function startButton() {
           document.getElementById("endScreen").style.visibility = "visible";
           clearInterval(timer);
         }
-      };
+      }
     }
+    
+    // to change color of popup buttons when we hover over
+    var buttons = document.getElementsByClassName("button");
+      for (let index = 0; index < buttons.length - 1; index++) { // we put buttons.length - 1 to not affect tip button
+        const element = buttons[index];
+        
+        element.addEventListener("mouseover", () => (element.style.backgroundColor = "rgb(85, 135, 154)"))
+        element.addEventListener("mouseout", () => (element.style.backgroundColor = "rgb(133, 208, 235"))
+      }
+
+
+
 
     document.getElementById("menuButton").onclick = () => {
-      document.getElementById("sudokuContainer").innerHTML = "";
+      document.getElementById("startingPage").innerHTML = "";
       document.getElementById("mainBody").innerHTML = mainbody; 
 
       clearInterval(timer);
     }
+
 
     document.getElementById("solveButton").onclick = () => {
       for (const key in matrixClone) {
@@ -168,7 +187,7 @@ function startButton() {
     }
 
     document.getElementById("endScreenHomeButton").onclick = () => {
-      document.getElementById("sudokuContainer").innerHTML = "";
+      document.getElementById("startingPage").innerHTML = "";
       document.getElementById("mainBody").innerHTML = mainbody; 
 
       document.getElementById("endScreen").style.visibility = "hidden";
@@ -212,6 +231,8 @@ function startButton() {
       $(`a${getIndex(i, j)}`).addEventListener("click", (e) => {
         document.getElementById("buttonPopup").style.visibility = "visible";
 
+        //document.getElementById("buttonPopup").style.transition = "10ms";
+
         lightRowsAndColumns(i, j, e.target);
 
         num1 = i;
@@ -224,7 +245,9 @@ function startButton() {
         document.getElementById("buttonPopup").style.top = `${popupTop}px`;
       });
     }
--
+
+    //document.getElementById("buttonPopup").addEventListener("transitionend", () => (document.getElementById("buttonPopup").style.transition = "10ms"))
+
 
     function toggleRight(){
       num2++;
@@ -273,10 +296,17 @@ function startButton() {
       e.classList.add("cellActive");
     }
 
+    const buttonPopupElement = document.getElementById("buttonPopup");
+
+    buttonPopupElement.addEventListener("mouseover", () => (buttonPopupElement.style.transition = "height 500ms"))
+
+    buttonPopupElement.addEventListener("mouseout", () => (buttonPopupElement.style.transition = "none"))
   
 
     document.addEventListener("click", function (e) {
       if (!document.getElementById("sudokuContainer").contains(e.target) || document.getElementById("sideGroupBox").contains(e.target)){
+        //document.getElementById("buttonPopup").style.transition = "500ms";
+
         var inputs = document.getElementsByClassName("input");
         for (let index = 0; index < inputs.length; index++) {
           const element = inputs[index];
