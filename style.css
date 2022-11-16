@@ -72,7 +72,7 @@ align-items: center; */
   top: calc(50% - 300px);
   border-radius: 50px;
   visibility: hidden;
-  z-index: 1;
+  z-index: 1.5;
 }
 
 #endScreen #endScreenText{
@@ -295,6 +295,71 @@ align-items: center; */
   z-index: 1;
 }
 
+
+@media screen and (max-width: 1100px){
+  #sideGroupBox{
+    position: fixed;
+    /* border: 4px dashed green; */
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    top: auto;
+    /* top: calc(100% - 200px); */
+    height: 200px;
+    background-color: blue;
+    z-index: 1;
+  }
+  
+  #sideGroupBox .sideButton{
+    position: absolute;
+    height: 100px;
+    width: 200px;
+    border-radius: 15px;
+    text-align: center;
+    /* left: calc(50% - 100px); */
+  }
+  
+  #sideGroupBox #menuButton{
+    background-color: rgb(231, 146, 136);
+    border: 2px solid red;
+    font-size: 65px;
+    left: 0px;
+    top: 50px;
+  }
+  
+  #sideGroupBox #solveButton{
+    background-color: rgb(231, 146, 136);
+    border: 2px solid red;
+    font-size: 40px;
+    left: 220px;
+    top: 50px;
+  }
+  
+  #sideGroupBox #sideTipButton{
+    background-color: rgb(231, 146, 136);
+    border: 2px solid red;
+    font-size: 65px;
+    font-weight: bold;
+    left: 440px;
+    top: 50px;
+  }
+  
+  #sideGroupBox #timer{
+    background-color: rgb(231, 146, 136);
+    border: 2px solid red;
+    font-size: 75px;
+    font-weight: bold;
+    left: 660px;
+    top: 50px;
+  }
+  
+  #sideGroupBox #pauseButton{
+    background-color: rgb(0 161 255);
+    font-size: 70px;
+    left: 880px;
+    top: 50px;
+  }
+}
 
 
 
