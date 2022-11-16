@@ -323,7 +323,7 @@ align-items: center; */
     background-color: rgb(231, 146, 136);
     border: 2px solid red;
     font-size: 65px;
-    left: 0px;
+    left: 10px;
     top: 50px;
   }
   
@@ -340,7 +340,7 @@ align-items: center; */
     border: 2px solid red;
     font-size: 65px;
     font-weight: bold;
-    left: 440px;
+    left: 430px;
     top: 50px;
   }
   
@@ -349,14 +349,14 @@ align-items: center; */
     border: 2px solid red;
     font-size: 75px;
     font-weight: bold;
-    left: 660px;
+    left: 640px;
     top: 50px;
   }
   
   #sideGroupBox #pauseButton{
     background-color: rgb(0 161 255);
     font-size: 70px;
-    left: 880px;
+    left: 850px;
     top: 50px;
   }
 }
