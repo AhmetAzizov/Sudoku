@@ -162,7 +162,7 @@ align-items: center; */
   height: 50px;
   font-size: 35px;
   margin: auto;
-  margin-top: 40px;
+  margin-top: -350px;
   display: block;
 }
 
@@ -175,8 +175,8 @@ align-items: center; */
   top: 50px;
   left: 60px;
   height: auto;
-  width: 120px;
-  border-radius: 15px;
+  width: 300px;
+  border-radius: 35px;
   /* transition: 500ms; */
   overflow: hidden;
   visibility: hidden;
@@ -200,27 +200,28 @@ align-items: center; */
   text-align: center;
   background-color: rgb(133, 208, 235);
   display: inline-block;
-  width: calc(33.33% - 10px);
-  height: 25px;
-  border-radius: 8px;
   border: 0;
-  margin: 5px;
-  font-size: 15px;
   font-weight: bold;
   padding-top: 5px;
   overflow: hidden;
-
+  height: 75px;
+  margin: 10px;
+  width: calc(33.33% - 20px);
+  border-radius: 20px;
+  font-size: 50px;
+  font-weight: bold;
   /* box-sizing: border-box; */
 }
 
 #buttonPopup #clearButton {
-  width: calc(50% - 10px);
+  width: calc(50% - 20px);
 }
 
 #buttonPopup #tipButton {
   position: absolute;
-  width: calc(50% - 10px);
-  font-size: 16px;
+  width: calc(50% - 20px);
+  font-weight: bold;
+  font-size: 45px;
   background-color: rgb(129, 129, 6);
 }
 
@@ -234,33 +235,7 @@ align-items: center; */
   bottom: -1px
 }
 
-/* ---------------------------------- popup button hover ------------------------------------------ */
 
-#buttonPopup:hover > .button{
-  height: 75px;
-  margin: 10px;
-  width: calc(33.33% - 20px);
-  border-radius: 20px;
-  font-size: 50px;
-  font-weight: bold;
-}
-
-#buttonPopup:hover > #clearButton {
-  width: calc(50% - 20px);
-}
-
-#buttonPopup:hover > #tipButton {
-  width: calc(50% - 20px);
-  font-weight: bold;
-  font-size: 45px;
-}
-
-#buttonPopup:hover{
-  width: 300px;
-  border-radius: 35px;
-}
-
-/* ------------------------------------------------------------------------------------------------- */
 
 #sideGroupBox .sideButton{
   position: absolute;
@@ -285,11 +260,12 @@ align-items: center; */
   font-size: 32px;
 }
 
-#sideGroupBox #tipButton{
+#sideGroupBox #sideTipButton{
   background-color: rgb(231, 146, 136);
   top: 250px;
   border: 2px solid red;
   font-size: 55px;
+  font-weight: bold;
 }
 
 #sideGroupBox #timer{
@@ -316,6 +292,7 @@ align-items: center; */
   top: 0;
   height: 100%;
   background-color: blue;
+  z-index: 1;
 }
 
 
@@ -334,6 +311,7 @@ align-items: center; */
 .cellHover {
   border-width: 5px !important;
   border-style: dashed;
+  border-color: rgb(7, 62, 243) !important;
   /* background-color: rgb(197, 196, 196); */
 }
 
@@ -350,4 +328,11 @@ align-items: center; */
   border-width: 3px;
   border-color: black;
   color: darkblue;
+}
+
+.cellTips {
+  color: yellow;
+  pointer-events: none;
+  border-width: 3px;
+  border-color: black;
 }
